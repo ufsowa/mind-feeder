@@ -18,7 +18,7 @@
         "except": ["first-nested"],
         "ignore": ["after-comment"]
       } ],
-      "unit-whitelist": null,
+      "declaration-property-value-disallowed-list": null,
       "scss/selector-no-redundant-nesting-selector": true,
       "scss/no-duplicate-dollar-variables": true
       },

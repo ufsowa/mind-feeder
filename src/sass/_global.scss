@@ -1,0 +1,19 @@
+body {
+  background: $color-dark;
+  font-family: $font-text;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: $font-normal;
+  color: $color-main;
+}
+
+header {
+  max-width: 1922px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 50px 0 0;
+}

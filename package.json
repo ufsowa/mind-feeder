@@ -50,6 +50,6 @@
     },
     "dependencies": {
         "json-server": "^0.17.4",
-        "sass": "^1.35.1"
+        "sass": "^1.64.2"
     }
 }

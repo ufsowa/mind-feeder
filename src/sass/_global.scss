@@ -1,4 +1,5 @@
 body {
+  text-align: center;
   background: $color-dark;
   font-family: $font-text;
   font-size: 14px;
@@ -8,12 +9,40 @@ body {
 }
 
 header {
-  max-width: 1922px;
+  max-width: $base-width;
   margin: 0 auto;
+  transition: ease all .5s;
+
+  @include for-size(xsmall) {
+    font-size: calc($base-height * 0.08);
+    letter-spacing: 0.5em;
+  }
+
+  @include for-size(small) {
+    font-size: calc($base-height * 0.1);
+    letter-spacing: 0.5em;
+  }
+
+  @include for-size(medium) {
+    font-size: calc($base-height * 0.15);
+    letter-spacing: calc($base-height * 0.12);
+  }
 }
 
 .container {
-  max-width: 600px;
+  max-width: calc($base-width * 0.5);
   margin: 0 auto;
-  padding: 0 50px 0 0;
+
+
+  @include for-size(xsmall) {
+    padding: 0 5px;
+  }
+
+  @include for-size(small) {
+    padding: 0 20px;
+  }
+
+  @include for-size(medium) {
+    padding: 0 40px;
+  }
 }

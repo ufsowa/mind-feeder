@@ -1,5 +1,6 @@
 import { settings } from './settings.js';
 import HomePage from './components/HomePage.js';
+import Navigation from './components/Navigation.js';
 
 /** Main app **/
 
@@ -9,6 +10,7 @@ const app = {
     const thisApp = this;
 
     thisApp.initData();
+    thisApp.initNavigation();
 
     console.log('**** Init app ****');
     console.log(thisApp);
@@ -35,7 +37,12 @@ const app = {
     const thisApp = this;
 
     new HomePage(thisApp.data.songs);
-  }
+  },
+
+  initNavigation: function(){
+
+    new Navigation();
+  },
 };
 
 /** Run app **/

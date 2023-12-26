@@ -5,9 +5,13 @@ export const select = {
   },
   containerOf: {
     homePage: '#home',
+    pages: '#pages',
   },
   homePage: {
-    songsList: '.songs-list',
+    songsList: '.homePage > .songs-list',
+  },
+  nav: {
+    links: '#nav-bar > a',
   },
 };
 
@@ -22,5 +26,14 @@ export const settings = {
     songs: 'songs',
     files: 'songs',
     authors: 'authors',
+  },
+};
+
+export const classNames = {
+  nav: {
+    active: 'active',
+  },
+  pages: {
+    active: 'active',
   },
 };

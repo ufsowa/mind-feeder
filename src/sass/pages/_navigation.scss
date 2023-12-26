@@ -1,0 +1,30 @@
+#pages {
+  > * {
+    display: none;
+  }
+  
+  > .active {
+    display: block;
+  }
+}
+
+.navigation {
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  color: $color-main;
+  font-weight: $font-semibold;
+  font-size: 0.25em;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+ 
+  a {
+    color: $color-main;
+    text-decoration: none;
+    cursor: pointer;
+
+    &.active {
+      text-shadow: 4px 4px 8px rgba($color-main, .9);
+    }
+  }
+}

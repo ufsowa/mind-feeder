@@ -1,3 +1,52 @@
+#pages {
+  margin-bottom: 40px;
+
+  h1 {
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    font-weight: $font-semibold;
+  }
+
+  h3 {
+    letter-spacing: .2em;
+    font-size: 14px;
+    font-weight: $font-semibold;
+    margin-bottom: 25px;
+  }
+
+  .search-top {
+    margin: 25px auto;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+
+  .search-input {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      height: 100%;
+      border: none;
+      border-radius: 4%;
+    }
+
+    @include for-size(xsmall) {
+      flex-direction: column;
+    }
+
+    @include for-size(small) {
+      flex-direction: column;
+    }
+
+    @include for-size(medium) {
+      flex-direction: row;
+    }
+
+  }
+}
+
 .contacts {
   display: flex;
   align-items: center;
@@ -60,6 +109,7 @@
 
   .subscribe {
     flex: 1 1 30%;
+    height: 50px;
 
     @include for-size(xsmall) {
       padding-top: 0px;

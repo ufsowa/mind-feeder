@@ -29,20 +29,25 @@ header {
   }
 }
 
+.footer {
+  letter-spacing: .2em;
+  font-size: 12px;
+}
+
 .container {
   max-width: calc($base-width * 0.5);
   margin: 0 auto;
 
 
   @include for-size(xsmall) {
-    padding: 0 5px;
-  }
-
-  @include for-size(small) {
     padding: 0 20px;
   }
 
+  @include for-size(small) {
+    padding: 0 30px;
+  }
+
   @include for-size(medium) {
-    padding: 0 40px;
+    padding: 0 50px;
   }
 }

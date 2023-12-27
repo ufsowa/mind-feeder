@@ -12,7 +12,7 @@ export const select = {
     pages: '#pages',
   },
   nav: {
-    links: '#nav-bar > a',
+    links: '.navigation > a',
   },
   homePage: {
     songsList: '.homePage > .songs-list',

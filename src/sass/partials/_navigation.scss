@@ -9,15 +9,17 @@
 }
 
 .navigation {
+  max-width: calc($base-width * 0.5);
   margin: 50px auto;
+  margin-bottom: 25px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   color: $color-main;
   font-weight: $font-semibold;
   font-size: 0.25em;
   letter-spacing: 0em;
   text-transform: uppercase;
- 
+  
   a {
     color: $color-main;
     text-decoration: none;
@@ -26,5 +28,17 @@
     &.active {
       text-shadow: 4px 4px 8px rgba($color-main, .9);
     }
+  }
+
+  @include for-size(xsmall) {
+    padding: 0 20px;
+  }
+
+  @include for-size(small) {
+    padding: 0 40px;
+  }
+
+  @include for-size(medium) {
+    padding: 0 50px;
   }
 }

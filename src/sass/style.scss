@@ -8,6 +8,7 @@
 @import 'global';
 @import 'typography';
 
-@import 'pages/navigation';
-@import 'pages/header';
-@import 'pages/homepage';
+@import 'partials/navigation';
+@import 'partials/header';
+@import 'partials/pages';
+@import 'partials/audio';

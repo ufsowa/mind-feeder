@@ -18,10 +18,12 @@
                     <h3 class="h3">Engage<br>in<br>art</h3>
                 </div>
             </div>
-            <div id="nav-bar" class="navigation container">
-                <a href="#home">Home</a>
-                <a href="#search">Search</a>
-                <a href="#discover">Discover</a>
+            <div id="nav-bar" class="container">
+                <div class="navigation">
+                    <a href="#home">Home</a>
+                    <a href="#search">Search</a>
+                    <a href="#discover">Discover</a>
+                </div>
             </div>
         </header>
 
@@ -30,14 +32,14 @@
             <div id="search"></div>
             <div id="discover"></div>
         </div>
-        <div class="footer container">All rigts reserved</div>
+        <div class="footer container">All rights reserved</div>
 
         <!--- templates --->
 
         <!--- template Song --->
         <script id="song" type="text/x-handlebars-template">
             <div>{{title}}</div>
-            <div class="{{{className}}}">
+            <div class="{{{className}}} song">
             <audio>
                 <source src="/songs/{{{filename}}}" type="audio/mpeg">
             </audio>
@@ -47,28 +49,30 @@
         <!--- template discover page --->
         <script id="discoverPage" type="text/x-handlebars-template">
             <h1>discover</h1>
-            <h3>give it a try!</h3>
+            <h3>Give it a try!</h3>
             <div class="discover container">
-                <div class="songs-list"></div>
+                <div class="songs-list container"></div>
             </div>
         </script>
 
         <!--- template search page --->
         <script id="searchPage" type="text/x-handlebars-template">
             <h1>search</h1>
-            <label> Name
-            <input type="text">
-            </label>
-            <button class="btn">Search</button>
+                <div class="search-top container">
+                <label class="search-input container"> Name
+                    <input type="text"> 
+                    <button class="btn">Search</button>
+                </label>
+            </div>
             <div class="search container">
-                <div class="songs-list">Search</div>
+                <div class="songs-list container"></div>
             </div>
         </script>
 
         <!--- template Home Page --->
         <script id="homePage" type="text/x-handlebars-template">
             <div class="homePage container">
-                <div class="songs-list"></div>
+                <div class="songs-list container"></div>
             </div>
             <div class="contacts">
                 <h1>Subscribe <span>Now</span></h1>

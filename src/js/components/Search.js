@@ -106,6 +106,11 @@ class Search {
         thisSearch.dom.songsList.appendChild(new Song(songData));
       }
     }
+    // eslint-disable-next-line no-undef
+    GreenAudioPlayer.init({
+      selector: '.search-player', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
   }
 }
 

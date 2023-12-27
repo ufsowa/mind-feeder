@@ -3,7 +3,6 @@ import HomePage from './components/HomePage.js';
 import Navigation from './components/Navigation.js';
 import Discover from './components/Discover.js';
 import Search from './components/Search.js';
-
 /** Main app **/
 
 const app = {
@@ -41,6 +40,11 @@ const app = {
     new HomePage(thisApp.data.songs);
     new Discover(thisApp.data.songs);
     new Search(thisApp.data.songs);
+    // eslint-disable-next-line no-undef
+    GreenAudioPlayer.init({
+      selector: '.play-list', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
   },
 
   initNavigation: function(){

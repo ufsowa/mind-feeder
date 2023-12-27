@@ -6,7 +6,7 @@
 
         <title>Music feeder - mufee</title>
 
-
+        <link rel="stylesheet" href="/vendor/audio-player-1.1.2/css/green-audio-player.min.css">
         <link rel="stylesheet" href="/css/style.css">
 
     </head>
@@ -37,6 +37,11 @@
         <!--- template Song --->
         <script id="song" type="text/x-handlebars-template">
             <div>Song {{id}}</div>
+            <div class="play-list">
+            <audio>
+                <source src="/songs/{{{filename}}}" type="audio/mpeg">
+            </audio>
+            </div>
         </script>
 
         <!--- template discover page --->
@@ -92,6 +97,7 @@
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+        <script src="/vendor/audio-player-1.1.2/js/green-audio-player.min.js"></script>
         <script src="js/app.js" type="module"></script>
     </body>
 </html>

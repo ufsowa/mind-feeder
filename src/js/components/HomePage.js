@@ -34,7 +34,7 @@ class HomePage {
     console.log('page elements: ', thisPage.dom);
 
     for(let songData of songsData) {
-      const songItem = new Song(songData);
+      const songItem = new Song(songData, 'play-list');
 
       thisPage.dom.songsList.appendChild(songItem);
     }

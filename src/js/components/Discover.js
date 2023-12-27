@@ -49,7 +49,8 @@ class Discover {
       selectedId = Math.floor(Math.random() * thisPage.songsData.length + 1) - 1;
     }
     thisPage.selectedSong = selectedId;
-    thisPage.dom.songsWrapper.replaceChildren(new Song(thisPage.songsData[selectedId]));
+    thisPage.dom.songsWrapper.replaceChildren(new Song(thisPage.songsData[selectedId], 'discover-player'));
+    Song.initAudio('.discover-player');
   }
 }
 

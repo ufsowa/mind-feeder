@@ -36,8 +36,8 @@
 
         <!--- template Song --->
         <script id="song" type="text/x-handlebars-template">
-            <div>Song {{id}}</div>
-            <div class="play-list">
+            <div>{{title}}</div>
+            <div class="{{{className}}}">
             <audio>
                 <source src="/songs/{{{filename}}}" type="audio/mpeg">
             </audio>

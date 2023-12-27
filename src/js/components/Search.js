@@ -103,14 +103,10 @@ class Search {
 
     for(let songData of thisSearch.songsData){
       if(songsIds.has(songData.id)){
-        thisSearch.dom.songsList.appendChild(new Song(songData));
+        thisSearch.dom.songsList.appendChild(new Song(songData, 'search-player'));
       }
     }
-    // eslint-disable-next-line no-undef
-    GreenAudioPlayer.init({
-      selector: '.search-player', // inits Green Audio Player on each audio container that has class "player"
-      stopOthersOnPlay: true
-    });
+    Song.initAudio('.search-player');
   }
 }
 

@@ -1,22 +1,36 @@
 export const select = {
   templateOf: {
     homePage: '#homePage',
+    discover: '#discoverPage',
+    search: '#searchPage',
     song: '#song',
   },
   containerOf: {
     homePage: '#home',
+    discover: '#discover',
+    search: '#search',
     pages: '#pages',
+  },
+  nav: {
+    links: '#nav-bar > a',
   },
   homePage: {
     songsList: '.homePage > .songs-list',
   },
-  nav: {
-    links: '#nav-bar > a',
+  discover: {
+    songList: '.discover > .songs-list',
+  },
+  search: {
+    songList: '.search > .songs-list',
+    button: 'button',
+    input: 'input',
   },
 };
 
 export const templates = {
   homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
+  discover: Handlebars.compile(document.querySelector(select.templateOf.discover).innerHTML),
+  search: Handlebars.compile(document.querySelector(select.templateOf.search).innerHTML),
   song: Handlebars.compile(document.querySelector(select.templateOf.song).innerHTML),
 };
 

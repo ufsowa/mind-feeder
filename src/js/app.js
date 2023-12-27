@@ -1,6 +1,8 @@
 import { settings } from './settings.js';
 import HomePage from './components/HomePage.js';
 import Navigation from './components/Navigation.js';
+import Discover from './components/Discover.js';
+import Search from './components/Search.js';
 
 /** Main app **/
 
@@ -29,14 +31,16 @@ const app = {
     }).then((resp) => {
       thisApp.data.songs = resp;
 
-      thisApp.initHomePage();
+      thisApp.initPages();
     });
   },
 
-  initHomePage: function() {
+  initPages: function() {
     const thisApp = this;
 
     new HomePage(thisApp.data.songs);
+    new Discover(thisApp.data.songs);
+    new Search(thisApp.data.songs);
   },
 
   initNavigation: function(){
@@ -47,4 +51,4 @@ const app = {
 
 /** Run app **/
 
-app.init();
+app.init();            

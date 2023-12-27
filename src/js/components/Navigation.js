@@ -40,6 +40,13 @@ class Navigation {
 
     for(let page of thisNav.dom.pages){
       page.classList.toggle(classNames.pages.active, page.id === pageId);
+
+      if(page.id === pageId && pageId === 'discover') {
+        const pageEvent = new CustomEvent('pageUpdated', {
+          bubbles: true,
+        });
+        page.dispatchEvent(pageEvent);
+      }
     }
 
     for(let link of thisNav.dom.links){

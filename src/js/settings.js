@@ -4,18 +4,21 @@ export const select = {
     discover: '#discoverPage',
     search: '#searchPage',
     song: '#song',
+    admin: '#adminPage'
   },
   containerOf: {
     homePage: '#home',
     discover: '#discover',
     search: '#search',
     pages: '#pages',
+    admin: '#admin',
   },
   nav: {
     links: '.navigation > a',
   },
   homePage: {
     songsList: '.homePage > .songs-list',
+    subscribe: '.btn',
   },
   discover: {
     songList: '.discover > .songs-list',
@@ -32,11 +35,12 @@ export const templates = {
   discover: Handlebars.compile(document.querySelector(select.templateOf.discover).innerHTML),
   search: Handlebars.compile(document.querySelector(select.templateOf.search).innerHTML),
   song: Handlebars.compile(document.querySelector(select.templateOf.song).innerHTML),
+  admin: Handlebars.compile(document.querySelector(select.templateOf.admin).innerHTML),
 };
 
 export const settings = {
   db: {
-    url: 'http://localhost:3131',
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
     songs: 'songs',
     files: 'songs',
     authors: 'authors',

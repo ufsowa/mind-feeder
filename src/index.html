@@ -31,6 +31,7 @@
             <div id="home"></div>
             <div id="search"></div>
             <div id="discover"></div>
+            <div id="admin"></div>
         </div>
         <div class="footer container">All rights reserved</div>
 
@@ -85,7 +86,7 @@
             <div class="contacts">
                 <h1>Subscribe <span>Now</span></h1>
                 <div class="center">
-                    <div class="subscribe"><button class="btn">Join Now</button></div>
+                    <a class="subscribe" href="#admin"><button class="btn">Join Now</button></a>
                     <div class="details">
                         <div class="event">
                         <div class="artist">
@@ -106,6 +107,13 @@
                         </div>
                 </div>
             </div>
+        </script>
+
+        <!--- admin page --->
+        <script id="adminPage" type="text/x-handlebars-template">
+        <h1>Register</h1>
+        <h2>Upload your music</h2>
+        <input type="file">
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>

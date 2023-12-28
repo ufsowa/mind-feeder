@@ -15,7 +15,8 @@ class Navigation {
   getElements(){
     const thisNav = this;
 
-    thisNav.dom.pages = document.querySelector(select.containerOf.pages).children;
+    thisNav.dom.pagesWrapper = document.querySelector(select.containerOf.pages);
+    thisNav.dom.pages = thisNav.dom.pagesWrapper.children;
     thisNav.dom.links = document.querySelectorAll(select.nav.links);
   }
 
@@ -69,6 +70,15 @@ class Navigation {
         thisNav.activatePage(pageId);
       });
     }
+
+    thisNav.dom.pagesWrapper.addEventListener('pageRedirected', function(event){
+      
+      const pageId = event.detail.pageId;
+
+      thisNav.activatePage(pageId);
+    });
+    
+
   }
         
 }

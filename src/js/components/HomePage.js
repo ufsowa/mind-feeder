@@ -7,12 +7,13 @@ class HomePage {
 
     thisPage.dom = {};
 
-    thisPage.initElements();
+    thisPage.getElements();
     thisPage.renderPage();
     thisPage.renderData(initData);
+    thisPage.initActions();
   }
 
-  initElements() {
+  getElements() {
     const thisPage = this;
 
     thisPage.dom.container = document.querySelector(select.containerOf.homePage);
@@ -24,6 +25,8 @@ class HomePage {
     const htmlElement = document.createElement('div');
     htmlElement.innerHTML = templates.homePage();
     thisPage.dom.container.appendChild(htmlElement);
+
+    thisPage.dom.admin = thisPage.dom.container.querySelector(select.homePage.subscribe);
   }
 
   renderData(songsData) {
@@ -38,6 +41,27 @@ class HomePage {
 
       thisPage.dom.songsList.appendChild(songItem);
     }
+  }
+
+  initActions(){
+    const thisPage = this;
+
+    thisPage.dom.admin.addEventListener('click', function(event){
+      event.preventDefault();
+
+      const clickedElement = event.target.parentNode;
+      const redirectLink = clickedElement.getAttribute('href').replace('#', '');
+      console.log('Subscribe', clickedElement, redirectLink);
+
+      const redirectEvent = new CustomEvent('pageRedirected', {
+        bubbles: true,
+        detail: {
+          pageId: redirectLink,
+        }
+      });
+
+      thisPage.dom.container.dispatchEvent(redirectEvent);
+    });
   }
 }
 

@@ -4,6 +4,7 @@ import Navigation from './components/Navigation.js';
 import Discover from './components/Discover.js';
 import Search from './components/Search.js';
 import Song from './components/Song.js';
+import Admin from './components/Admin.js';
 /** Main app **/
 
 const app = {
@@ -41,6 +42,7 @@ const app = {
     new HomePage(thisApp.data.songs);
     new Discover(thisApp.data.songs);
     new Search(thisApp.data.songs);
+    new Admin();
     // eslint-disable-next-line no-undef
     Song.initAudio('.play-list');
   },

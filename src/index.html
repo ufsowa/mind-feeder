@@ -38,11 +38,19 @@
 
         <!--- template Song --->
         <script id="song" type="text/x-handlebars-template">
-            <div>{{title}}</div>
-            <div class="{{{className}}} song">
+            <h2>{{author}} - {{title}}</h2>
+            <div class="{{{ className }}} song">
             <audio>
-                <source src="/songs/{{{filename}}}" type="audio/mpeg">
+                <source src="/songs/{{{ filename }}}" type="audio/mpeg">
             </audio>
+            </div>
+            <div class="song_details">
+                <h5>Categories:
+                    {{#each categories}}
+                        {{ this }}
+                    {{/each}}
+                </h5>
+                <h5>#{{ ranking }} in the ranking</h5>
             </div>
         </script>
 

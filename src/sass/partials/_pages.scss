@@ -30,9 +30,23 @@
 
     input {
       height: 100%;
-      width: 240px;
       border: none;
       border-radius: 3%;
+
+      @include for-size(xsmall) {
+        height: 60px;
+        width: 150px;
+      }
+  
+      @include for-size(small) {
+        height: 60px;
+        width: 150px;
+      }
+  
+      @include for-size(medium) {
+        height: 100%;
+        width: 230px;
+      }
     }
 
     .btn {
@@ -42,10 +56,12 @@
 
     @include for-size(xsmall) {
       flex-direction: column;
+      row-gap: 5px;
     }
 
     @include for-size(small) {
       flex-direction: column;
+      row-gap: 5px;
     }
 
     @include for-size(medium) {

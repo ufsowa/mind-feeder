@@ -28,6 +28,11 @@ export const select = {
     button: 'button',
     input: 'input',
   },
+  admin: {
+    send: '#sendBtn',
+    load: '#fetchBtn',
+    input: 'input',
+  },
 };
 
 export const templates = {

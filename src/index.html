@@ -69,7 +69,7 @@
             <h1>search</h1>
                 <div class="search-top container">
                 <label class="search-input container"> Name
-                    <input type="text"> 
+                    <input type="text" name="search"> 
                     <button class="btn">Search</button>
                 </label>
             </div>
@@ -113,8 +113,12 @@
         <script id="adminPage" type="text/x-handlebars-template">
         <h1>Register</h1>
         <h2>Upload your music</h2>
-        <input type="file">
-        </script>
+        <input type="file" name="upload">
+        <div class="container">
+            <button id="sendBtn" class="btn">Send</button>
+            <button id="fetchBtn" class="btn">Refresh</button>
+        </div>
+    </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
         <script src="/vendor/audio-player-1.1.2/js/green-audio-player.min.js"></script>

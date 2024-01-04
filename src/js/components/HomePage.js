@@ -32,7 +32,6 @@ class HomePage {
     thisPage.dom.subscribe = thisPage.dom.container.querySelector(select.homePage.subscribe);
     thisPage.dom.songsList = document.querySelector(select.homePage.songsList);
     thisPage.dom.categoryList = document.querySelector(select.homePage.categoryList);
-    console.log('page elements: ', thisPage.dom);
   }
 
   renderData() {

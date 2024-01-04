@@ -13,8 +13,6 @@ class Search {
     thisSearch.render();
     thisSearch.initSearch();
     thisSearch.initActions();
-
-    console.log(thisSearch);
   }
 
   getElements(){
@@ -72,7 +70,6 @@ class Search {
 
     const searches = searchTxt.split(queryRegex);
     const resultsIds = new Set();
-    console.log('Run search: ', searches);
 
     for(let item of thisSearch.indexes){
       const songId = item[0];
@@ -80,7 +77,6 @@ class Search {
         let isPresent = false;
         for(let query of searches){
           isPresent = index.includes(query);
-          console.log('Matching? ', isPresent, index);
           if (isPresent) break;
         }
         if(isPresent){
@@ -88,8 +84,6 @@ class Search {
         }
       }
     }
-
-    console.log('Found items: ', resultsIds);
 
     thisSearch.displayResults(resultsIds);
   }

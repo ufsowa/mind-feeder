@@ -44,14 +44,11 @@ class Discover {
   selectSong(){
     const thisPage = this;
 
-    console.log('Stats: ',thisPage.categories);
-
     const categoryKeys = Object.keys(thisPage.categories);
     let probability = [];
     let totalCount = 0;
     categoryKeys.forEach((item) => {
       const categoryCounts = thisPage.categories[item].counter;
-      console.log(categoryCounts);
       totalCount+=categoryCounts;
       probability.push(categoryCounts);
     });
@@ -63,7 +60,6 @@ class Discover {
         return 0;
     });
     const checkNormalization = normalizedProb.reduce((x,y) => x+y, 0);
-    console.log('check: ', checkNormalization);
     // create target events
     const eventsTarget = [0];
     for(let i=0; i < normalizedProb.length; i++){
@@ -76,29 +72,24 @@ class Discover {
     console.log(eventsTarget, rndEvent);
     // find the category with probability
     for(let i=0; i < eventsTarget.length-1; i++){
-      console.log('i: ', i, eventsTarget[i+1]);
       if(rndEvent > eventsTarget[i] && rndEvent <= eventsTarget[i+1]){
         selectedCategory = categoryKeys[i];
-        console.log('get: ', selectedCategory, i, eventsTarget[i], eventsTarget[i+1], rndEvent);
       } 
     }
+    console.log('Category: ', selectedCategory);
     // choose rnd song from category
     const rndSongId = Math.floor(Math.random() * thisPage.categories[selectedCategory].songs.length + 1) - 1;
     let newSongId = thisPage.categories[selectedCategory].songs[rndSongId];
-    console.log('Get audio: ', newSongId, thisPage.categories[selectedCategory]);
     // get random if audio is frequent or stats are corrupted
     if(checkNormalization !== 1){
       const rndSongindex = Math.floor(Math.random() * thisPage.songsData.length + 1) - 1;
       newSongId = thisPage.songsData[rndSongindex].id;
-      console.log('Get new song: ', newSongId);
     }
     while (thisPage.selectedSongId === newSongId){
       const rndSongindex = Math.floor(Math.random() * thisPage.songsData.length + 1) - 1;
       newSongId = thisPage.songsData[rndSongindex].id;
-      console.log('Get other song: ', newSongId);
     }
     
-    console.log('Final song: ', newSongId);
     thisPage.selectedSongId = newSongId;
     thisPage.dom.songsWrapper.replaceChildren(new Song(thisPage.songsData.find( song => song.id === thisPage.selectedSongId), 'discover-player'));
     Song.initAudio('.discover-player');

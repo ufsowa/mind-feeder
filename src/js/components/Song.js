@@ -10,7 +10,6 @@ class Song {
 
     thisSong.render();
     thisSong.getElements();
-    console.log('New song: ', thisSong);
 
     return thisSong.dom.element;
   }

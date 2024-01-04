@@ -14,6 +14,24 @@
     margin-bottom: 25px;
   }
 
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+    margin: 25px 0;
+
+    a {
+      color: $color-main;
+      text-decoration: none;
+
+      &.active {
+        color: $color-alert;
+        text-shadow: 4px 4px 8px rgba($color-main, .9);
+      }
+    }
+  }
+
   .search-top {
     margin: 25px auto;
     margin-bottom: 40px;

@@ -1,4 +1,4 @@
-import { templates } from '../settings.js';
+import { select, templates } from '../settings.js';
 
 class Song {
   constructor(initData, style){
@@ -9,6 +9,7 @@ class Song {
     thisSong.data.className = style;
 
     thisSong.render();
+    thisSong.getElements();
     console.log('New song: ', thisSong);
 
     return thisSong.dom.element;
@@ -20,6 +21,12 @@ class Song {
     const htmlElement = document.createElement('div');
     htmlElement.innerHTML = templates.song(thisSong.data);
     thisSong.dom.element = htmlElement;
+  }
+
+  getElements(){
+    const thisSong = this;
+
+    thisSong.dom.play = thisSong.dom.element.querySelector(select.song.play);
   }
 
   static initAudio(className){

@@ -42,7 +42,7 @@
             <h2>{{author}} - {{title}}</h2>
             <div class="{{{ className }}} song">
             <audio>
-                <source src="/songs/{{{ filename }}}" type="audio/mpeg">
+                <source id="{{{ id }}}" src="/songs/{{{ filename }}}" type="audio/mpeg">
             </audio>
             </div>
             <div class="song_details">
@@ -81,6 +81,7 @@
         <!--- template Home Page --->
         <script id="homePage" type="text/x-handlebars-template">
             <div class="homePage container">
+                <div class="category-list container"></div>
                 <div class="songs-list container"></div>
             </div>
             <div class="contacts">

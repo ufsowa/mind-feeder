@@ -18,7 +18,9 @@ export const select = {
   },
   homePage: {
     songsList: '.homePage > .songs-list',
+    categoryList: '.homePage > .category-list',
     subscribe: '.btn',
+    links: '.category-list > a',
   },
   discover: {
     songList: '.discover > .songs-list',
@@ -32,6 +34,9 @@ export const select = {
     send: '#sendBtn',
     load: '#fetchBtn',
     input: 'input',
+  },
+  song: {
+    audio: 'audio',
   },
 };
 
